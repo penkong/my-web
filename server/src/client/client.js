@@ -1,4 +1,5 @@
-// Startup point for the client side application
+// Startup point for the client side application 
+//its that same index.js in other react app also
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,9 +12,7 @@ import axios from 'axios';
 import Routes from './Routes';
 import reducers from './reducers';
 
-const axiosInstance = axios.create({
-  baseURL: '/api'
-});
+const axiosInstance = axios.create({ baseURL: '/api' });
 
 const store = createStore(
   reducers,
@@ -30,7 +29,7 @@ ReactDOM.hydrate(
   document.querySelector('#root')
 );
 
-//---------------------------------------------
+//----------------CCCCSSSSSSS GUYSSSSSS ------------- from andrew
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';

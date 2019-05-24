@@ -79,17 +79,8 @@ const componentRoutes = {
 };
 
 
-const Routes = () => {
-  return ( <
-    Router history = {
-      hashHistory
-    }
-    routes = {
-      componentRoutes
-    }
-    />
-  );
-};
+const Routes = () => ( <Router history={hashHistory} routes={componentRoutes}/>);
+
 // const Routes = () => {
 //   return (
 //     <Router history={hashHistory}>
@@ -103,5 +94,5 @@ const Routes = () => {
 //   );
 // };
 
-export default Routes;
+export default Routes; //this was go for main index.js
 
