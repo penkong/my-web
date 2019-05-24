@@ -18,7 +18,6 @@ const config = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
   },
-
   externals: [webpackNodeExternals()]
 };
 
