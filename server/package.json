@@ -11,7 +11,7 @@
     "start": "node server/server.js",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server",
+    "server-dev": "webpack-dev-server",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "clean": "rimraf dist",
@@ -20,12 +20,12 @@
     "deploy": "npm run build && git subtree push --prefix dist gh-pages",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "concur-dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
     "webhook": "./sendgrid_webhook.sh",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "dev:build-client": "webpack --config webpack.client.js --watch",
-    "dev-ssr": "npm-run-all --parallel dev:*"
+    "dev": "npm-run-all --parallel dev:*"
   },
   "repository": {
     "type": "git",

@@ -19,7 +19,7 @@ const store = createStore(
   window.INITIAL_STATE,
   applyMiddleware(thunk.withExtraArgument(axiosInstance))
 );
-
+//hydrate is center of ssr notation because we send second bundle
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>

@@ -6,7 +6,10 @@ import { renderRoutes } from 'react-router-config';
 import serialize from 'serialize-javascript';
 import { Helmet } from 'react-helmet';
 import Routes from '../client/Routes';
-
+//indeed here we one time render whole react app one time as html
+//to serve user from server and the other client.js really load whole app
+//also remember that external on webpack dont let lib of node_modules come 
+//in bundler
 export default (req, store, context) => {
   const content = renderToString(
     <Provider store={store}>

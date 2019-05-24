@@ -2,7 +2,6 @@
 import 'babel-polyfill';
 import express from 'express';
 import { matchRoutes } from 'react-router-config';
-import { renderToString } from 'react-dom/server';
 import proxy from 'express-http-proxy';
 import Routes from './client/Routes';
 import renderer from './helpers/renderer';
@@ -29,7 +28,7 @@ app.use(express.static('public'));
 app.get('*', (req, res) => {
   const store = createStore(req);
   const promises = matchRoutes(Routes, req.path)
-    .map(({ route }) =>route.loadData ? route.loadData(store) : null)
+    .map(({ route }) => route.loadData ? route.loadData(store) : null )
     .map(promise => { if (promise) new Promise((resolve, reject) => {
           promise.then(resolve).catch(resolve);
         });
@@ -55,6 +54,8 @@ app.listen(3000, () => {
 // this is server.js
 ////////////////////////////////////////////////////
 //from full stack guys
+
+//seems these guys related to api ha?
 const express = require('express');
 const path = require('path');
 
