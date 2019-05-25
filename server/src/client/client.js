@@ -16,7 +16,7 @@ const axiosInstance = axios.create({ baseURL: '/api' });
 
 const store = createStore(
   reducers,
-  window.INITIAL_STATE,
+  window.INITIAL_STATE, // add init state for rehydrate redux store after first html load up
   applyMiddleware(thunk.withExtraArgument(axiosInstance))
 );
 //hydrate is center of ssr notation because we send second bundle

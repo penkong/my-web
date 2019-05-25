@@ -24,7 +24,7 @@ export default (req, store, context) => {
   );
 
   const helmet = Helmet.renderStatic();
-
+      // that initial state is for rehydrate redux store with info already there are
   return `
     <html>
       <head>
