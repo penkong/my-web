@@ -17,6 +17,7 @@ export default (req, store, context) => {
       {/* context is kind of error handler also browser router auto see url but static
       need to tell path of url*/}
       <StaticRouter location={req.path} context={context}>
+        {/* to show what set comp show duo to Routes and all load when we are sending html */}
         <div>{renderRoutes(Routes)}</div>
       </StaticRouter>
     </Provider>

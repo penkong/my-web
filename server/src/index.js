@@ -27,8 +27,12 @@ app.use(express.static('public'));
 
 app.get('*', (req, res) => {
   const store = createStore(req);
+  //these are logic help us to load routes duo to req path for react-router-config
+  //match routes do this here,
   const promises = matchRoutes(Routes, req.path)
+    //for first time load data call from here to manually dispatch
     .map(({ route }) => route.loadData ? route.loadData(store) : null )
+    //this promise is for not load whole store in app for req of only one comp
     .map(promise => { if (promise) new Promise((resolve, reject) => {
           promise.then(resolve).catch(resolve);
         });

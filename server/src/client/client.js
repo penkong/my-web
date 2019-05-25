@@ -1,6 +1,6 @@
 // Startup point for the client side application 
 //its that same index.js in other react app also
-import 'babel-polyfill';
+import 'babel-polyfill'; //define some func async that babel can use
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -24,6 +24,7 @@ const store = createStore(
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>
+    {/* to show what set comp show duo to Routes and all load when we are sending html */}
       <div>{renderRoutes(Routes)}</div>
     </BrowserRouter>
   </Provider>,
