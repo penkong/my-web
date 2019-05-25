@@ -11,7 +11,7 @@ import { renderRoutes } from 'react-router-config';
 import axios from 'axios';
 import Routes from './Routes';
 import reducers from './reducers';
-
+//make custom instance axios for extraArg of thunk to handle cookie stuff
 const axiosInstance = axios.create({ baseURL: '/api' });
 
 const store = createStore(

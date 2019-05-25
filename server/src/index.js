@@ -8,7 +8,7 @@ import renderer from './helpers/renderer';
 import createStore from './helpers/createStore';
 
 const app = express();
-
+//proxy sit between browser and api and catch cookie
 app.use('/api', proxy('http://react-ssr-api.herokuapp.com', {
     proxyReqOptDecorator(opts) {
       opts.headers['x-forwarded-host'] = 'localhost:3000';
@@ -26,6 +26,7 @@ app.use(express.static('public'));
 
 
 app.get('*', (req, res) => {
+  //cause of proxy and axios instance work on store pass req to it / include cookie
   const store = createStore(req);
   //these are logic help us to load routes duo to req path for react-router-config
   //match routes do this here,
