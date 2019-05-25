@@ -13,6 +13,6 @@ const App = ({ route }) => {
 };
 
 export default {
-  component: App,
+  component: App, //load data call with redux store
   loadData: ({ dispatch }) => dispatch(fetchCurrentUser())
 };
