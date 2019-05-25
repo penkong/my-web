@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import UsersListPage from './pages/UsersListPage';
 import NotFoundPage from './pages/NotFoundPage';
 import AdminsListPage from './pages/AdminsListPage';
-
+// it share between 2 side for static and browser routing system
 export default [
   {
     ...App,

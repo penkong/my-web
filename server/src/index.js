@@ -35,6 +35,8 @@ app.get('*', (req, res) => {
     });
   Promise.all(promises).then(() => {
     const context = {};
+    //for static router pass req to find out url .
+    //pass store to renderer for init load redux
     const content = renderer(req, store, context);
     if (context.url) res.redirect(301, context.url);
     if (context.notFound) {res.status(404);}

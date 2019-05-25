@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import thunk from 'redux-thunk'; //for async action creator
 import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import axios from 'axios';
@@ -20,6 +20,7 @@ const store = createStore(
   applyMiddleware(thunk.withExtraArgument(axiosInstance))
 );
 //hydrate is center of ssr notation because we send second bundle
+//browser router on client  static router on server for good ssr
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>
