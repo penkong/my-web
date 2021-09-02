@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/penkong/landing-page#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "express": "^4.17.0",
     "express-http-proxy": "^1.5.1",
     "history": "^4.9.0",
