@@ -58,7 +58,7 @@
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "serialize-javascript": "^1.7.0",
-    "validator": "^11.0.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
